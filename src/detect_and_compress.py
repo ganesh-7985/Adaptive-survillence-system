@@ -5,7 +5,7 @@ from ultralytics import YOLO
 from compression import compress_video
 from utils import log_detection, save_frame
 
-# Initialize model and set relevant classes
+
 relevant_class_names = ['person', 'bicycle', 'car', 'motorcycle', 'bus', 'truck']
 model = YOLO('yolov8n.pt')
 video_path = '../input/input_video.mp4'
@@ -13,12 +13,12 @@ output_path_relevant = '../output/relevant'
 output_path_irrelevant = '../output/irrelevant'
 log_path = '../output/logs/detections_log.csv'
 
-# Create directories if not exist
+
 os.makedirs(output_path_relevant, exist_ok=True)
 os.makedirs(output_path_irrelevant, exist_ok=True)
 os.makedirs('../output/logs', exist_ok=True)
 
-# Initialize video capture
+
 cap = cv2.VideoCapture(video_path)
 if not cap.isOpened():
     print("Error: Could not open video.")
