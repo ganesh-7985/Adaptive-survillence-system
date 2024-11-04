@@ -3,16 +3,14 @@ import os
 import pandas as pd
 from ultralytics import YOLO
 from compression import compress_video
-from utils import log_detection, save_frame
-
+from utils import save_frame,log_detection
 
 relevant_class_names = ['person', 'bicycle', 'car', 'motorcycle', 'bus', 'truck']
 model = YOLO('yolov8n.pt')
-video_path = '../input/input_video.mp4'
-output_path_relevant = '../output/relevant'
-output_path_irrelevant = '../output/irrelevant'
-log_path = '../output/logs/detections_log.csv'
-
+video_path = '/Users/shankarganesh/Desktop/asc/input/input_video.mp4'
+output_path_relevant = '/Users/shankarganesh/Desktop/asc/output/relevant'
+output_path_irrelevant = '/Users/shankarganesh/Desktop/asc/output/irrelevant'
+log_path = '/Users/shankarganesh/Desktop/asc/output/logs/detections_log.csv'
 
 os.makedirs(output_path_relevant, exist_ok=True)
 os.makedirs(output_path_irrelevant, exist_ok=True)
